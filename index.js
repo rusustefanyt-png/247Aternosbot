@@ -1,14 +1,13 @@
 const mineflayer = require('mineflayer');
 
 const bot = mineflayer.createBot({
-  host: process.env.MC_HOST,
-  port: parseInt(process.env.MC_PORT),
-  username: process.env.MC_USERNAME,
+  host: 'WarsMCs.aternos.me:64599',  // <-- Aquí va tu IP de Aternos
+  port: 64599,                   // <-- Cambia si tu Aternos usa otro puerto
+  username: 'BotActivo'        // <-- El nombre del bot en Minecraft
 });
 
 bot.on('spawn', () => {
-  console.log('✅ Bot conectado y listo para saltar');
-
+  console.log('🤖 Bot conectado y saltando');
   setInterval(() => {
     bot.setControlState('jump', true);
     setTimeout(() => {
